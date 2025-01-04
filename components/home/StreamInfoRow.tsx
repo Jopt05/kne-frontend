@@ -32,7 +32,7 @@ const StreamInfoRow = ({ title, value, isLoading, color }: Props) => {
 const styles = StyleSheet.create({
     row: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     rowTitle: {
         flex: 1,
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     rowInfo: {
         fontSize: 12,
         color: colors.fourth,
-        fontFamily: textTypes.regular
+        fontFamily: textTypes.regular,
+        width: '50%'
     }
 })
 
