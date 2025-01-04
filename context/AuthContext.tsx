@@ -37,6 +37,7 @@ export const AuthProvider = ({ children }: any) => {
     }, [])
 
     const checkToken = async() => {
+        // await AsyncStorage.removeItem('token')
         const token = await AsyncStorage.getItem('token');
         if( !token ) return dispatch({ type: 'notAuthenticated' });
 

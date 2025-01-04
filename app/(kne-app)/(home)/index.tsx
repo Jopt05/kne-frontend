@@ -1,3 +1,4 @@
+import Subtitle from '@/components/Subtitle'
 import { colors } from '@/constants/styles'
 import { AuthContext } from '@/context/AuthContext'
 import React, { useContext } from 'react'
@@ -21,7 +22,14 @@ const HomeScreen = () => {
             .
           </Text>
         </View>
-        
+        <View style={styles.isOnlineContainer}>
+          <Text style={styles.isOnlineTitle}>
+            ¿Está padre online?
+          </Text>
+          <Text style={styles.textUser}>
+            No 
+          </Text>
+        </View>
       </ScrollView>
     </View>
   )
@@ -47,7 +55,27 @@ const styles = StyleSheet.create({
   textUser: {
     fontSize: 20,
     color: colors.fourth,
-    fontWeight: 'bold',}
+    fontWeight: 'bold',
+  },
+  isOnlineContainer: {
+    width: 'auto',
+    backgroundColor: colors.third,
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    borderRadius: 10,
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  isOnlineTitle: {
+    fontSize: 20,
+    color: colors.fourth,
+  },
+  isOnlineSubtitle: {
+    fontSize: 16,
+    color: colors.fourth,
+  }
 })
 
 export default HomeScreen

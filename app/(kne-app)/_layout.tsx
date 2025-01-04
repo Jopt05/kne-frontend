@@ -17,7 +17,7 @@ const CheckAuthLayout = () => {
               marginBottom: 5,
             }}
           >
-            <ActivityIndicator />
+            <ActivityIndicator size={60}/>
           </View>
         );
     }

@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     width: '80%',
     backgroundColor: colors.third,
-    borderRadius: 5,
+    borderRadius: 10,
     marginTop: 20,
   },
   formHeader: {
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
   formInput: {
     fontSize: 14,
     color: colors.fourth,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.primary,
     marginVertical: 2,
     borderWidth: 1,
     borderColor: 'transparent'
