@@ -5,7 +5,7 @@ export default function RootLayout() {
   return (
     <AppState>
       <Stack screenOptions={{
-        headerShown: false
+        headerShown: false,
       }}>
       </Stack>
     </AppState>

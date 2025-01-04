@@ -3,6 +3,7 @@ import { AuthState, authReducer } from "../reducers/AuthReducer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import kneApi from "../api/kneapi";
 import { LoginData, RegisterData, User } from "../interfaces/User";
+import { router } from "expo-router";
 
 type AuthContextProps = {
     errorMessage: string;
@@ -37,7 +38,6 @@ export const AuthProvider = ({ children }: any) => {
 
     const checkToken = async() => {
         const token = await AsyncStorage.getItem('token');
-        console.log({token})
         if( !token ) return dispatch({ type: 'notAuthenticated' });
 
         // Hay token 
@@ -85,6 +85,7 @@ export const AuthProvider = ({ children }: any) => {
 
             await AsyncStorage.setItem('token', response.data.data.token);
             setIsLoading(false);
+            router.replace('/');
             
         } catch (error: any) {
             console.log(error.response.data);
@@ -114,6 +115,7 @@ export const AuthProvider = ({ children }: any) => {
             })
 
             
+            router.replace('/');
             setIsLoading(false);
             
         } catch (error: any) {

@@ -1,11 +1,10 @@
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { colors } from "../constants/styles";
-import Title from "../components/Title";
+import { colors } from "../../../constants/styles";
+import Title from "../../../components/Title";
 import { useContext, useState } from "react";
-import kneApi from "../api/kneapi";
-import { AuthContext } from "../context/AuthContext";
+import { AuthContext } from "../../../context/AuthContext";
 
-export default function Index() {
+export default function LoginScreen() {
 
   const { signIn, signUp, errorMessage, isLoading } = useContext( AuthContext );
 
