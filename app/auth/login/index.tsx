@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { colors } from "../../../constants/styles";
 import Title from "../../../components/Title";
 import { useContext, useState } from "react";
@@ -111,6 +111,7 @@ export default function LoginScreen() {
             ...styles.formInput,
             ...(hasErrors && !form.password && styles.invalidInput)
           }}
+          secureTextEntry={true}
           autoCorrect={false}
           autoCapitalize="none"
           keyboardAppearance="dark"
@@ -132,9 +133,7 @@ export default function LoginScreen() {
                 { (isRegistering) ? 'Registrarse' : 'Iniciar sesión' }
               </Text>
             ) : (
-              <Text style={styles.formButtonText}>
-                Cargando...
-              </Text>
+              <ActivityIndicator />
             )
           }
         </TouchableOpacity>

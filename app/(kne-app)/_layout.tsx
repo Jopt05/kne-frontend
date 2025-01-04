@@ -1,3 +1,4 @@
+import { colors } from '@/constants/styles';
 import { AuthContext } from '@/context/AuthContext'
 import { Redirect, Stack } from 'expo-router';
 import React, { useContext } from 'react'
@@ -29,7 +30,14 @@ const CheckAuthLayout = () => {
     return(
         <Stack
             screenOptions={{
-                headerShown: false
+                headerShown: true,
+                headerStyle: {
+                    backgroundColor: colors.third,
+                },
+                headerTintColor: colors.fourth,
+                headerTitleStyle: {
+                    fontWeight: 'bold'
+                }
             }}
         >
             <Stack.Screen 

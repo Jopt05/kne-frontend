@@ -111,7 +111,13 @@ export const AuthProvider = ({ children }: any) => {
                 type: 'signUp',
                 payload: {
                     token: response.data.data.token,
-                    user: null
+                    user: {
+                        email: response.data.data.email,
+                        id: response.data.data.id,
+                        username: response.data.data.username,
+                        password: response.data.data.password,
+                        status: response.data.data.status
+                    }
                 }
             })
 

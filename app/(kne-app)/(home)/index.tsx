@@ -1,12 +1,34 @@
 import Subtitle from '@/components/Subtitle'
 import { colors } from '@/constants/styles'
 import { AuthContext } from '@/context/AuthContext'
-import React, { useContext } from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import axios from 'axios'
+import React, { useContext, useEffect, useState } from 'react'
+import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native'
 
 const HomeScreen = () => {
 
   const { user, logOut } = useContext( AuthContext );
+
+  const [streamingState, setStreamingState] = useState({
+    isStreaming: false,
+    isLoading: true
+  })
+
+  const getStreamStatus = async() => {
+    const response = await axios.get('https://www.twitch.tv/knekro');
+    const sourceCode = response.data;
+    const isStreaming = sourceCode.includes('isLiveBroadcast');
+
+    setStreamingState({
+      ...streamingState,
+      isStreaming,
+      isLoading: false
+    })
+  }
+
+  useEffect(() => {
+    getStreamStatus();
+  }, [])
 
   return (
     <View style={styles.container}>
@@ -27,7 +49,13 @@ const HomeScreen = () => {
             ¿Está padre online?
           </Text>
           <Text style={styles.textUser}>
-            No 
+            {
+              (streamingState.isLoading)
+              ? <ActivityIndicator size={20}/>
+              : (streamingState.isStreaming)
+                ? 'Si'
+                : 'No'
+            }
           </Text>
         </View>
       </ScrollView>
