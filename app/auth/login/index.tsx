@@ -185,7 +185,9 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     marginVertical: 2,
     borderWidth: 1,
-    borderColor: 'transparent'
+    borderColor: 'transparent',
+    paddingVertical: 8,
+    paddingHorizontal: 5,
   },
   invalidInput: {
     borderColor: 'darkred',
