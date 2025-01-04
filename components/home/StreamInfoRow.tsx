@@ -1,4 +1,4 @@
-import { colors } from '@/constants/styles';
+import { colors, textTypes } from '@/constants/styles';
 import React from 'react'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
@@ -38,11 +38,13 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 16,
         color: colors.fourth,
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
+        fontFamily: textTypes.bold
     },
     rowInfo: {
         fontSize: 12,
         color: colors.fourth,
+        fontFamily: textTypes.regular
     }
 })
 

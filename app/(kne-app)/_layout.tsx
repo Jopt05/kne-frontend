@@ -30,14 +30,7 @@ const CheckAuthLayout = () => {
     return(
         <Stack
             screenOptions={{
-                headerShown: true,
-                headerStyle: {
-                    backgroundColor: colors.third,
-                },
-                headerTintColor: colors.fourth,
-                headerTitleStyle: {
-                    fontWeight: 'bold'
-                }
+                headerShown: false
             }}
         >
             <Stack.Screen 

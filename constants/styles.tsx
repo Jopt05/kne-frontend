@@ -4,3 +4,9 @@ export const colors = {
     third: '#272639',
     fourth: '#dbdcde'
 }
+
+export const textTypes = {
+    bold: 'Inter_Black',
+    regular: 'Inter_Regular',
+    light: 'Inter_Light',
+}

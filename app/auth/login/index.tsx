@@ -1,5 +1,5 @@
 import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { colors } from "../../../constants/styles";
+import { colors, textTypes } from "../../../constants/styles";
 import Title from "../../../components/Title";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
@@ -167,22 +167,24 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   formHeader: {
+    marginVertical: 2,
+    fontFamily: textTypes.bold,
     fontSize: 16,
     color: colors.fourth,
-    fontWeight: 'bold',
     textAlign: 'center',
-    marginVertical: 2
   },
   formLabel: {
     fontSize: 14,
     color: colors.fourth,
     marginTop: 15,
-    marginBottom: 5
+    marginBottom: 5,
+    fontFamily: textTypes.regular
   },
   formInput: {
     fontSize: 14,
     color: colors.fourth,
     backgroundColor: colors.primary,
+    fontFamily: textTypes.regular,
     marginVertical: 2,
     borderWidth: 1,
     borderColor: 'transparent',
@@ -201,11 +203,13 @@ const styles = StyleSheet.create({
   },
   formButtonText: {
     fontSize: 14,
+    fontFamily: textTypes.regular,
     color: colors.fourth,
     textAlign: 'center'
   },
   formCreateAccount: {
     fontSize: 12,
+    fontFamily: textTypes.regular,
     color: colors.fourth,
     textAlign: 'right',
     marginTop: 20

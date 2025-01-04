@@ -1,8 +1,8 @@
 import kneApi from '@/api/kneapi';
-import { colors } from '@/constants/styles'
+import { colors, textTypes } from '@/constants/styles'
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import StreamInfoRow from './StreamInfoRow';
 
 const StreamInfoContainer = () => {
@@ -45,7 +45,7 @@ const StreamInfoContainer = () => {
       }
     
     const handleGoStream = () => {
-        return;
+        Linking.openURL('https://www.twitch.tv/knekro');
     }
     
     useEffect(() => {
@@ -81,7 +81,7 @@ const StreamInfoContainer = () => {
                     onPress={() => handleGoStream()}
                 >
                     <View style={styles.streamButton}>
-                        <Text style={{ color: colors.fourth }}>
+                        <Text style={styles.streamButtonText}>
                             Ir al stream
                         </Text>
                     </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         color: colors.fourth,
-        fontWeight: 'bold'
+        fontFamily: textTypes.bold
     },
     streamButton: {
         backgroundColor: colors.secondary,
@@ -112,6 +112,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         marginTop: 10
+    },
+    streamButtonText: {
+        color: colors.fourth ,
+        fontFamily: textTypes.regular
     }
 })
 

@@ -1,10 +1,6 @@
-import kneApi from '@/api/kneapi'
 import StreamInfoContainer from '@/components/home/StreamInfoContainer'
-import Subtitle from '@/components/Subtitle'
-import { colors } from '@/constants/styles'
+import { colors, textTypes } from '@/constants/styles'
 import { AuthContext } from '@/context/AuthContext'
-import axios from 'axios'
-import { isLoading } from 'expo-font'
 import React, { useContext, useEffect, useState } from 'react'
 import { ActivityIndicator, ScrollView, StyleSheet, Text, View } from 'react-native'
 
@@ -48,11 +44,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.fourth,
     marginRight: 10,
+    fontFamily: textTypes.regular,
   },
   textUser: {
     fontSize: 20,
     color: colors.fourth,
-    fontWeight: 'bold'
+    fontFamily: textTypes.bold
   }
 })
 
